@@ -25,7 +25,6 @@ NSString *dylibPath = ROOT_PATH_NS(@"/Library/MobileSubstrate/DynamicLibraries/l
 
 // Function to handle preferences changed
 static void preferencesChanged(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
-    // TODO: preference changes
 }
 
 %hook SpringBoard

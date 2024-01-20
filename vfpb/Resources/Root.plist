@@ -52,6 +52,25 @@
             <key>PostNotification</key>
             <string>com.joshua.VFPB.preferences.changed</string>
         </dict>
+        
+        <!-- Credits -->
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>footerText</key>
+            <string>VolumeFLEX couldn't have been possible without these people:
+@Leptos
+@Alexandra
+@Nightwind
+ipadkid358 for FLEXit
+LacertosusDeus for 2 of his open-source tweaks
+            </string>
+            <key>isSectionHeader</key>
+            <true/>
+            <key>label</key>
+            <string>Credits:</string>
+        </dict>
+
     </array>
     <key>title</key>
     <string>Volume Flex Preferences</string>
