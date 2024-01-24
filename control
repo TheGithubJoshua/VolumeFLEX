@@ -6,4 +6,4 @@ Description: The world dosen't need another FLEX loader but people with fat fing
 Maintainer: Joshua Wheeler
 Author: Joshua Wheeler
 Section: Tweaks
-Depends: mobilesubstrate (>= 0.9.5000), libFLEX
+Depends: mobilesubstrate (>= 0.9.5000), libflex
