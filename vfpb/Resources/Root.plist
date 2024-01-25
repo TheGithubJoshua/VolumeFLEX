@@ -53,6 +53,22 @@
             <string>com.joshua.VFPB.preferences.changed</string>
         </dict>
         
+        <!-- Turn off the [Possibly Annoying] tune -->
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>default</key>
+            <true/>
+            <key>defaults</key>
+            <string>com.joshua.VFPB.plist</string>
+            <key>key</key>
+            <string>tune</string>
+            <key>label</key>
+            <string>Tune</string>
+            <key>PostNotification</key>
+            <string>com.joshua.VFPB.preferences.changed.tune</string>
+        </dict>
+        
         <!-- Credits -->
         <dict>
             <key>cell</key>
