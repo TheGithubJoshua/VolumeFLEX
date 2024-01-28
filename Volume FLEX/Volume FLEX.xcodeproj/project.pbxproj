@@ -35,11 +35,11 @@
 /* Begin PBXLegacyTarget section */
 		425324F52B558E5C0024455C /* Volume FLEX */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "c b r i";
+			buildArgumentsString = do;
 			buildConfigurationList = 425324F82B558E5C0024455C /* Build configuration list for PBXLegacyTarget "Volume FLEX" */;
 			buildPhases = (
 			);
-			buildToolPath = /usr/local/bin/dragon;
+			buildToolPath = /usr/bin/make;
 			buildWorkingDirectory = /Users/joshua/volumeflex;
 			dependencies = (
 			);
@@ -196,6 +196,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				THEOS = /Users/joshua/theos;
 			};
 			name = Debug;
 		};
@@ -208,6 +209,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				THEOS = /Users/joshua/theos;
 			};
 			name = Release;
 		};

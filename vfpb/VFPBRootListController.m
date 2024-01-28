@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "VFPBRootListController.h"
+#import <rootless.h>
 
 @implementation VFPBRootListController
 
@@ -14,7 +15,7 @@
 - (void)respring {
     NSLog(@"1010");
    NSTask* task = [[NSTask alloc] init];
-    [task setLaunchPath:(@"/usr/bin/killall")];
+    [task setLaunchPath:ROOT_PATH_NS(@"/usr/bin/killall")];
     [task setArguments:@[@"backboardd"]];
     [task launch];
 }
