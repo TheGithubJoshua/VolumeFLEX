@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "VFPBRootListController.h"
 #import <rootless.h>
+#include <spawn.h>
 
 @implementation VFPBRootListController
 
@@ -14,10 +15,25 @@
 
 - (void)respring {
     NSLog(@"1010");
-   NSTask* task = [[NSTask alloc] init];
-    [task setLaunchPath:ROOT_PATH_NS(@"/usr/bin/killall")];
-    [task setArguments:@[@"backboardd"]];
-    [task launch];
+    // Function to spawn a process using posix_spawn
+    const char *killallPath = [ROOT_PATH_NS("/usr/bin/killall") UTF8String];
+       const char *backboarddArg = "backboardd";
+
+       // Construct arguments array
+       const char *argv[] = {killallPath, backboarddArg, NULL};
+
+       // Spawn the process
+       pid_t pid;
+       posix_spawn(&pid, killallPath, NULL, NULL, (char *const *)argv, NULL);
+
+       // Check if the spawn was successful
+       if (pid > 0) {
+           // Successfully spawned the process
+           NSLog(@"Spawned process with PID: %d", pid);
+       } else {
+           // Failed to spawn the process
+           NSLog(@"Failed to spawn process");
+       }
 }
 
 -(void)donate {
