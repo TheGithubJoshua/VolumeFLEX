@@ -14,6 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Run Make
+      run: make
+
     - name: Build Rootless
       run: make package THEOS_PACKAGE_SCHEME=rootless FINALPACKAGE=1
 
