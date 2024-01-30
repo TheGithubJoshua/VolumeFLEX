@@ -37,8 +37,13 @@ jobs:
           name: "Package built by ${{ matrix.os }}"
           path: ${{ github.workspace }}/packages/*.deb
           
-      - name: Release
-        uses: fnkr/github-action-ghr@v1
-        env:
-          GHR_PATH: ${{ github.workspace }}/packages/*.deb
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: GH Release
+        uses: softprops/action-gh-release@v0.1.15
+        with:
+          body: Automated Release
+          name: Automated Release
+          tag_name: latest
+          draft: no
+          prerelease: yes
+          files: ${{ github.workspace }}/packages/*.deb
+    
