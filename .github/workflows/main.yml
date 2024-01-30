@@ -23,7 +23,6 @@ jobs:
           key: ${{ runner.os }}-${{ env.upstream_heads }}
 
       - name: Prepare Theos
-        # Don't use @main in production, this repo is specifically for testing it.
         uses: Randomblock1/theos-action@main
 
       - name: Build package
@@ -42,7 +41,6 @@ jobs:
         with:
           body: Automated Release
           name: Automated Release
-          tag_name: latest
           draft: no
           prerelease: yes
           files: ${{ github.workspace }}/packages/*.deb
