@@ -36,12 +36,9 @@ jobs:
           name: "Package built by ${{ matrix.os }}"
           path: ${{ github.workspace }}/packages/*.deb
           
-      - name: GH Release
-        uses: softprops/action-gh-release@v0.1.15
+      - name: Upload to Release Action
+        uses: Shopify/upload-to-release@v2.0.0
         with:
-          body: Automated Release
-          name: Automated Release
-          draft: no
-          prerelease: yes
-          files: ${{ github.workspace }}/packages/*.deb
+          name: Automated Pre-Release
+          path: ${{ github.workspace }}/packages/*.deb
     
