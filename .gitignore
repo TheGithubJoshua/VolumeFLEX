@@ -3,3 +3,7 @@ packages/
 .DS_Store
 .dragon/
 *.xcuserstate
+project.pbxproj
+UserInterfaceState.xcuserstate
+.fleet/
+Volume FLEX.xcodeproj/
