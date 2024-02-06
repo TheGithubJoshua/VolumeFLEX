@@ -54,14 +54,13 @@ static void preferencesChanged(CFNotificationCenterRef center, void *observer, C
                 // Vibrate and play tune :D
                 AudioServicesPlaySystemSound(1328);
             }
-            
-            /*SBApplication *frontmostApp =*/ [(SpringBoard *)UIApplication.sharedApplication _accessibilityFrontMostApplication];
+            [(SpringBoard *)UIApplication.sharedApplication _accessibilityFrontMostApplication];
             SBLockScreenManager *lockscreenManager = [objc_getClass("SBLockScreenManager") sharedInstance];
             // if frontmostApp is true and the phone is not locked
             if (frontmostApp && !lockscreenManager.isUILocked) {
                 notify_post([[NSString stringWithFormat:@"com.joshua.volumeflex/%@", frontmostApp.bundleIdentifier] UTF8String]);
             } else {
-                /*void *libraryHandle =*/dlopen(dylibPath.UTF8String, RTLD_NOW);
+                dlopen(dylibPath.UTF8String, RTLD_NOW);
                 [[objc_getClass("FLEXManager") sharedManager] showExplorer];
             }
         }
@@ -89,7 +88,7 @@ static void preferencesChanged(CFNotificationCenterRef center, void *observer, C
         int regToken;
         NSString *notifForBundle = [NSString stringWithFormat:@"com.joshua.volumeflex/%@", currentID];
         notify_register_dispatch(notifForBundle.UTF8String, &regToken, dispatch_get_main_queue(), ^(int token) {
-            /*void *libraryHandle =*/dlopen(dylibPath.UTF8String, RTLD_NOW);
+            dlopen(dylibPath.UTF8String, RTLD_NOW);
             [[objc_getClass("FLEXManager") sharedManager] showExplorer];
         });
     }
@@ -112,7 +111,7 @@ static void preferencesChanged(CFNotificationCenterRef center, void *observer, C
         int regToken;
         NSString *notifForBundle = [NSString stringWithFormat:@"com.joshua.volumeflex/%@", currentID];
         notify_register_dispatch(notifForBundle.UTF8String, &regToken, dispatch_get_main_queue(), ^(int token) {
-            /*void *libraryHandle =*/dlopen(dylibPath.UTF8String, RTLD_NOW);
+            dlopen(dylibPath.UTF8String, RTLD_NOW);
             [[objc_getClass("FLEXManager") sharedManager] showExplorer];
         });
     }
