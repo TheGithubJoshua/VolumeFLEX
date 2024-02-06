@@ -3,23 +3,18 @@
 <dict>
     <key>items</key>
     <array>
-        <!-- Respring Button -->
         <dict>
-            <key>cell</key>
-            <string>PSButtonCell</string>
-            <key>label</key>
-            <string>Respring</string>
-            <key>action</key>
-            <string>respring</string>
-            <key>cellClass</key>
-            <string>PSTableCell</string>
-            <key>isButton</key>
-            <true/>
-            <key>labelColor</key>
-            <string>#007AFF</string>
-            <!-- Blue color -->
-        </dict>
-        
+        <key>cell</key>
+        <string>PSGroupCell</string>
+        <key>footerText</key>
+        <string>No Respring needed here :D
+        </string>
+        <key>isSectionHeader</key>
+        <true/>
+        <key>label</key>
+        <string></string>
+    </dict>
+
         <!-- Donate Button :D -->
         <dict>
             <key>cell</key>
