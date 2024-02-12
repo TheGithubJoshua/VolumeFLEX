@@ -9,7 +9,7 @@
 
 static BOOL tweakEnabled = YES;
 static NSUserDefaults *preferences = nil;
-static BOOL tune = YES;
+static BOOL tune = NO;
 NSString *dylibPath = ROOT_PATH_NS(@"/Library/MobileSubstrate/DynamicLibraries/libFLEX.dylib");
 
 @interface SBApplication
