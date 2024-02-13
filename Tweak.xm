@@ -151,7 +151,7 @@ static void preferencesChanged(CFNotificationCenterRef center, void *observer, C
 
             tune = [[preferences objectForKey:@"tune"] boolValue];
 
-        %init
+%init
             
     } else {
         int regToken;
