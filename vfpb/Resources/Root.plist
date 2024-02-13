@@ -1,0 +1,89 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>items</key>
+        <array>
+            <dict>
+                <key>cell</key>
+                <string>PSGroupCell</string>
+                <key>footerText</key>
+                <string>No Respring needed here :D
+                </string>
+                <key>isSectionHeader</key>
+                <true/>
+                <key>label</key>
+                <string></string>
+            </dict>
+
+            <!-- Donate Button :D -->
+            <dict>
+                <key>cell</key>
+                <string>PSButtonCell</string>
+                <key>label</key>
+                <string>Donate :D</string>
+                <key>action</key>
+                <string>donate</string>
+                <key>cellClass</key>
+                <string>PSTableCell</string>
+                <key>isButton</key>
+                <true/>
+                <key>labelColor</key>
+                <string>#007AFF</string>
+                <!-- Blue color -->
+            </dict>
+
+            <!-- The off switch, for when you just want to press both Volume buttons together without loading FLEX. -->
+            <dict>
+                <key>cell</key>
+                <string>PSSwitchCell</string>
+                <key>default</key>
+                <true/>
+                <key>defaults</key>
+                <string>com.joshua.VFPB.plist</string>
+                <key>key</key>
+                <string>Enabled</string>
+                <key>label</key>
+                <string>Enable My Tweak</string>
+                <key>PostNotification</key>
+                <string>com.joshua.VFPB.preferences.changed</string>
+            </dict>
+
+            <!-- Turn off the [Possibly Annoying] tune -->
+            <dict>
+                <key>cell</key>
+                <string>PSSwitchCell</string>
+                <key>default</key>
+                <true/>
+                <key>defaults</key>
+                <string>com.joshua.VFPB.plist</string>
+                <key>key</key>
+                <string>tune</string>
+                <key>label</key>
+                <string>Tune</string>
+                <key>PostNotification</key>
+                <string>com.joshua.VFPB.preferences.changed.tune</string>
+            </dict>
+
+            <!-- Credits -->
+            <dict>
+                <key>cell</key>
+                <string>PSGroupCell</string>
+                <key>footerText</key>
+                <string>VolumeFLEX couldn't have been possible without these people:
+                    @leptos
+                    @4vyolit
+                    @nightwinddev
+                    ipadkid358 for FLEXit
+                    LacertosusDeus for 2 of his open-source tweaks
+                </string>
+                <key>isSectionHeader</key>
+                <true/>
+                <key>label</key>
+                <string>Credits:</string>
+            </dict>
+
+        </array>
+        <key>title</key>
+        <string>Volume Flex Preferences</string>
+    </dict>
+</plist>
