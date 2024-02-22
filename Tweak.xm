@@ -63,6 +63,7 @@ static void preferencesChanged(CFNotificationCenterRef center, void *observer, C
         NSString *notifForBundle = [NSString stringWithFormat:@"com.joshua.volumeflex/%@", currentID];
         notify_register_dispatch(notifForBundle.UTF8String, &regToken, dispatch_get_main_queue(), ^(int token) {
             dlopen(dylibPath.UTF8String, RTLD_NOW);
+	    NSLog(@"libraryHandle = %s", dlerror());
             [[objc_getClass("FLEXManager") sharedManager] showExplorer];
         });
     }

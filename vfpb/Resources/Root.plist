@@ -70,11 +70,11 @@
                 <string>PSGroupCell</string>
                 <key>footerText</key>
                 <string>VolumeFLEX couldn't have been possible without these people:
-                    @leptos
-                    @4vyolit
-                    @nightwinddev
-                    ipadkid358 for FLEXit
-                    LacertosusDeus for 2 of his open-source tweaks
+@leptos
+@4vyolit
+@nightwinddev
+ipadkid358 for FLEXit
+LacertosusDeus for 2 of his open-source tweaks
                 </string>
                 <key>isSectionHeader</key>
                 <true/>
