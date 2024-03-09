@@ -93,18 +93,16 @@ static void preferencesChanged(CFNotificationCenterRef center, void *observer, C
     if (tweakEnabled) {
 
         SBApplication *frontmostApp = [(SpringBoard *)UIApplication.sharedApplication _accessibilityFrontMostApplication];
-        SBLockScreenManager *lockscreenManager = [objc_getClass("SBLockScreenManager") sharedInstance];
 
         // Only proceed if the user is holding down both buttons
-        if (upPressed && downPressed && !lockscreenManager.isUILocked) {
+        if (upPressed && downPressed) {
             if (tune) {
                 // Vibrate and play tune :D
                 AudioServicesPlaySystemSound(1328);
             }
             [(SpringBoard *)UIApplication.sharedApplication _accessibilityFrontMostApplication];
-            SBLockScreenManager *lockscreenManager = [objc_getClass("SBLockScreenManager") sharedInstance];
             // if frontmostApp is true and the phone is not locked
-            if (frontmostApp && !lockscreenManager.isUILocked) {
+            if (frontmostApp) {
                 notify_post([[NSString stringWithFormat:@"com.joshua.volumeflex/%@", frontmostApp.bundleIdentifier] UTF8String]);
             } else {
                 dlopen(dylibPath.UTF8String, RTLD_NOW);
