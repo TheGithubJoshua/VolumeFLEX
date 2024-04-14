@@ -61,23 +61,11 @@ jobs:
         # Don't use @main in production, this repo is specifically for testing it.
         uses: Randomblock1/theos-action@main
 
-      - name: Modify control file
-        run: |
-           sed 's/Depends: mobilesubstrate (>=0\.9\.5000), libflex/Depends: mobilesubstrate (>=0.9.5000), libvolumeflex/' control > control.tmp
-           mv control.tmp control
-           cat control
-
 
       - name: Build package
         run: |
           rm -f packages/*
           make package THEOS_PACKAGE_SCHEME=rootless FINALPACKAGE=1
-
-      - name: Revert control file
-        run: |
-           sed 's/Depends: mobilesubstrate (>=0\.9\.5000), libvolumeflex/Depends: mobilesubstrate (>=0.9.5000), libflex/' control > control.tmp"
-           mv control.tmp control
-           cat control
 
       - name: Upload package
         uses: actions/upload-artifact@v3
