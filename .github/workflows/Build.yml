@@ -65,7 +65,7 @@ jobs:
         run: |
            pwd
            ls -la
-           sed -i 's/Depends: mobilesubstrate (>=0\.9\.5000), libflex/Depends: mobilesubstrate (>=0.9.5000), libvolumeflex/' control
+           sed -i 's/Depends: mobilesubstrate (>=0\.9\.5000), libflex/Depends: mobilesubstrate (>=0.9.5000), libvolumeflex/' "${{ github.workspace }}/control"
 
       - name: Build package
         run: |
