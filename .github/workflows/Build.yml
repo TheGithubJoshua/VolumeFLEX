@@ -63,8 +63,8 @@ jobs:
 
       - name: Modify control file
         run: |
-           sed 's/Depends: mobilesubstrate (>=0\.9\.5000), libflex/Depends: mobilesubstrate (>=0.9.5000), libvolumeflex/' "${{ github.workspace }}/control" > "${{ github.workspace }}/control.tmp"
-           mv "${{ github.workspace }}/control.tmp" "${{ github.workspace }}/control"
+           sed 's/Depends: mobilesubstrate (>=0\.9\.5000), libflex/Depends: mobilesubstrate (>=0.9.5000), libvolumeflex/' control > control.tmp
+           mv control.tmp control
            cat control
 
 
@@ -75,8 +75,8 @@ jobs:
 
       - name: Revert control file
         run: |
-           sed 's/Depends: mobilesubstrate (>=0\.9\.5000), libvolumeflex/Depends: mobilesubstrate (>=0.9.5000), libflex/' "${{ github.workspace }}/control" > "${{ github.workspace }}/control.tmp"
-           mv "${{ github.workspace }}/control.tmp" "${{ github.workspace }}/control"
+           sed 's/Depends: mobilesubstrate (>=0\.9\.5000), libvolumeflex/Depends: mobilesubstrate (>=0.9.5000), libflex/' control > control.tmp"
+           mv control.tmp control
            cat control
 
       - name: Upload package
