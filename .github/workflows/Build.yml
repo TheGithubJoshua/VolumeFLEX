@@ -63,6 +63,8 @@ jobs:
 
       - name: Modify control file
         run: |
+           pwd
+           ls -la
            sed -i 's/Depends: mobilesubstrate (>=0\.9\.5000), libflex/Depends: mobilesubstrate (>=0.9.5000), libvolumeflex/' control
 
       - name: Build package
