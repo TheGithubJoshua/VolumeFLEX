@@ -63,10 +63,9 @@ jobs:
 
       - name: Modify control file
         run: |
-           pwd
-           ls -la
-            sed 's/Depends: mobilesubstrate (>=0\.9\.5000), libflex/Depends: mobilesubstrate (>=0.9.5000), libvolumeflex/' "${{ github.workspace }}/control" > "${{ github.workspace }}/control.tmp"
-            mv "${{ github.workspace }}/control.tmp" "${{ github.workspace }}/control"
+           sed 's/Depends: mobilesubstrate (>=0\.9\.5000), libflex/Depends: mobilesubstrate (>=0.9.5000), libvolumeflex/' "${{ github.workspace }}/control" > "${{ github.workspace }}/control.tmp"
+           mv "${{ github.workspace }}/control.tmp" "${{ github.workspace }}/control"
+           cat control
 
 
       - name: Build package
@@ -76,7 +75,9 @@ jobs:
 
       - name: Revert control file
         run: |
-           sed -i 's/Depends: mobilesubstrate (>=0\.9\.5000), libvolumeflex/Depends: mobilesubstrate (>=0.9.5000), libflex/' control
+           sed 's/Depends: mobilesubstrate (>=0\.9\.5000), libvolumeflex/Depends: mobilesubstrate (>=0.9.5000), libflex/' "${{ github.workspace }}/control" > "${{ github.workspace }}/control.tmp"
+           mv "${{ github.workspace }}/control.tmp" "${{ github.workspace }}/control"
+           cat control
 
       - name: Upload package
         uses: actions/upload-artifact@v3
