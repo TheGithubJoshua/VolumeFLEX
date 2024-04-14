@@ -64,6 +64,7 @@ jobs:
       - name: Build package
         run: |
           rm -f packages/*
+          sed -i 's/Depends: libflex/Depends: libvolumeflex/' control
           make package THEOS_PACKAGE_SCHEME=rootless FINALPACKAGE=1
 
       - name: Upload package
